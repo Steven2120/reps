@@ -14,7 +14,7 @@ router.get("/", function (req, res, next) {
 // });
 
 router.get("/myname", (req, res, next) => {
-  res.send("Jesse Raines");
+  res.send("Steven Moyano");
 });
 
 router.get("/myfavoritemovies", (req, res, next) => {
