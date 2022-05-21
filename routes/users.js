@@ -1,18 +1,24 @@
 var express = require("express");
 var router = express.Router();
-const favMovies = ["Godfather", "Avatar", "Scarface"];
 
 /* GET users listing. */
+
+// Stretch Goal ***
 router.get("/", function (req, res, next) {
-  res.send("respond with a resource");
+  res.render("users", { title: "Users" });
+});
+// End Of Stretch Goal ***
+
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
+
+router.get("/myname", (req, res, next) => {
+  res.send("Jesse Raines");
 });
 
-router.get("/myname", (req, res) => {
-  res.send("Steven");
-});
-
-router.get("/myfavoritemovies", (req, res) => {
-  res.json(favMovies);
+router.get("/myfavoritemovies", (req, res, next) => {
+  res.json(["The Lion King", "The Land Before Time", "Ferngulley"]);
 });
 
 module.exports = router;
